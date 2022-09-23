@@ -1,0 +1,9 @@
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+data("Fielding")
+data("People")
+
+people <- select(tbl_df(People), playerID, nameLast, nameFirst)
+Fielding <- Fielding %>%
+	left_join(people)
